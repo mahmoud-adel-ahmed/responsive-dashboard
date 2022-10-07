@@ -1,0 +1,133 @@
+@use "./_utilities.scss" as *;
+@use "../layout/grid" as media;
+
+aside {
+  height: 100vh;
+  @include media.mediaQuery(md) {
+    position: fixed;
+    left: -100%;
+    width: 18rem;
+    background-color: var(--color-white);
+    padding-right: var(--card-padding);
+    transition: var(--transition);
+    z-index: 999;
+    &.active {
+      left: 0;
+    }
+  }
+  .top {
+    @include flexProps(space-between, center);
+    margin-top: 1.4rem;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      h2 {
+        text-transform: uppercase;
+        @include media.mediaQuery(lg) {
+          display: none;
+        }
+        @include media.mediaQuery(md) {
+          display: block;
+        }
+        span {
+          text-transform: uppercase;
+        }
+      }
+      img {
+        width: 2rem;
+        height: 2rem;
+        @include media.mediaQuery(md) {
+          margin-left: 1rem;
+        }
+      }
+    }
+    .close {
+      display: none;
+      cursor: pointer;
+      @include media.mediaQuery(md) {
+        display: inline-block;
+      }
+    }
+  }
+  .sidebar {
+    height: 86vh;
+    position: relative;
+    top: 3rem;
+    display: flex;
+    flex-direction: column;
+    a {
+      margin-left: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: var(--color-info-dark);
+      height: 3.7rem;
+      position: relative;
+      transition: var(--transition);
+      @include media.mediaQuery(lg) {
+        width: 5.7rem;
+      }
+      @include media.mediaQuery(md) {
+        height: 3.4rem;
+        width: 100%;
+      }
+      .message-count {
+        background: var(--color-danger);
+        color: var(--color-white);
+        font-size: 11px;
+        padding: 2px 10px;
+        border-radius: var(--border-radius-1);
+      }
+      h3 {
+        font-weight: 500;
+        @include media.mediaQuery(lg) {
+          display: none;
+        }
+        @include media.mediaQuery(md) {
+          display: block;
+        }
+      }
+      span {
+        font-size: 1.6rem;
+        transition: var(--transition);
+      }
+      &:last-of-type {
+        position: absolute;
+        bottom: 2rem;
+        width: 100%;
+        @include media.mediaQuery(lg) {
+          position: relative;
+          margin-top: 1.3rem;
+          margin-left: 2.3rem;
+        }
+        @include media.mediaQuery(md) {
+          bottom: 1rem;
+        }
+      }
+      &.active {
+        background: var(--color-light);
+        color: var(--color-primary);
+        margin-left: 0;
+        span {
+          color: var(--color-primary);
+        }
+        &::before {
+          content: "";
+          width: 6px;
+          height: 100%;
+          background: var(--color-primary);
+        }
+        span {
+          margin-left: calc(1rem - 3px);
+        }
+      }
+      &:hover {
+        color: var(--color-primary);
+        span {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}

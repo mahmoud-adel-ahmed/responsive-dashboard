@@ -1,0 +1,85 @@
+@use "./colors" as *;
+@use "./typography" as *;
+@use "../layout/grid" as breakpoint;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  appearance: none;
+  border: 0;
+  outline: 0;
+  text-transform: capitalize;
+}
+
+html {
+  overflow-x: hidden;
+  font-size: clamp(0.7rem, 0.5vw + 10px, 1rem - 2px);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: var(--color-background);
+  font-size: 0.88rem;
+  font-family: $font;
+  color: var(--color-dark);
+  overflow-x: hidden;
+}
+
+.container {
+  width: 96%;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 14rem auto 23rem;
+  gap: 1.8rem;
+  @include breakpoint.mediaQuery(lg) {
+    width: 94%;
+    grid-template-columns: 7rem auto 23rem;
+  }
+  @include breakpoint.mediaQuery(md) {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-dark);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.photo {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.text-muted {
+  color: var(--color-info-dark);
+}
+
+.primary {
+  color: var(--color-primary);
+}
+
+.danger {
+  color: var(--color-danger);
+}
+
+.success {
+  color: var(--color-success);
+}
+
+.warning {
+  color: var(--color-warning);
+}

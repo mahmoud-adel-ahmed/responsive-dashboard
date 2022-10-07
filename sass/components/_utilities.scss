@@ -1,0 +1,19 @@
+%compProps {
+  background-color: var(--color-white);
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+}
+
+%hoverProps {
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+@mixin flexProps($justify: flex-start, $align: stretch) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}

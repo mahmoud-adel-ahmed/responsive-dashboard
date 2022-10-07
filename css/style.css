@@ -1,0 +1,821 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+:root {
+  --color-primary: #7380ec;
+  --color-danger: #ff7782;
+  --color-success: #41f1b6;
+  --color-warning: #ffbb55;
+  --color-white: #fff;
+  --color-background: #f6f6f9;
+  --color-dark: #363949;
+  --color-info-dark: #7d8da1;
+  --color-info-light: #dce1eb;
+  --color-light: rgba(132, 139, 200, 0.18);
+  --color-dark-variant: #677483;
+  --color-primary-variant: #111e88;
+  --card-border-radius: 2rem;
+  --border-radius-1: 0.4rem;
+  --border-radius-2: 0.8rem;
+  --border-radius-3: 1.2rem;
+  --card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+  --box-shadow: 0 2rem 3rem var(--color-light);
+  --transition: all 0.3s ease;
+}
+
+.dark-theme-toggle {
+  --color-white: #202528;
+  --color-background: #181a1e;
+  --color-dark: #edeffd;
+  --color-light: rgba(0, 0, 0, 0.4);
+  --color-dark-variant: #a3bdcc;
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+h3 {
+  font-size: 0.87rem;
+}
+
+h4 {
+  font-size: 0.8rem;
+}
+
+h5 {
+  font-size: 0.77rem;
+}
+
+small {
+  font-size: 0.75rem;
+}
+
+p {
+  color: var(--color-dark-variant);
+}
+
+b {
+  color: var(--color-dark);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  outline: 0;
+  text-transform: capitalize;
+}
+
+html {
+  overflow-x: hidden;
+  font-size: clamp(0.7rem, 0.5vw + 10px, 1rem - 2px);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: var(--color-background);
+  font-size: 0.88rem;
+  font-family: "Poppins", sans-serif;
+  color: var(--color-dark);
+  overflow-x: hidden;
+}
+
+.container {
+  width: 96%;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 14rem auto 23rem;
+  gap: 1.8rem;
+}
+@media screen and (max-width: 75em) {
+  .container {
+    width: 94%;
+    grid-template-columns: 7rem auto 23rem;
+  }
+}
+@media screen and (max-width: 75em) {
+  .container {
+    width: 94%;
+    grid-template-columns: 7rem auto 23rem;
+  }
+}
+@media screen and (max-width: 48em) {
+  .container {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 48em) {
+  .container {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-dark);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.photo {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.text-muted {
+  color: var(--color-info-dark);
+}
+
+.primary {
+  color: var(--color-primary);
+}
+
+.danger {
+  color: var(--color-danger);
+}
+
+.success {
+  color: var(--color-success);
+}
+
+.warning {
+  color: var(--color-warning);
+}
+
+.right .recent-updates .updates, main .sales > div, main .recent-orders table {
+  background-color: var(--color-white);
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+}
+
+.right .recent-updates .updates, .right .sales-analytics .item, main .sales > div, main .recent-orders table {
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+.right .recent-updates .updates:hover, .right .sales-analytics .item:hover, main .sales > div:hover, main .recent-orders table:hover {
+  box-shadow: none;
+}
+
+aside {
+  height: 100vh;
+}
+@media screen and (max-width: 48em) {
+  aside {
+    position: fixed;
+    left: -100%;
+    width: 18rem;
+    background-color: var(--color-white);
+    padding-right: var(--card-padding);
+    transition: var(--transition);
+    z-index: 999;
+  }
+  aside.active {
+    left: 0;
+  }
+}
+@media screen and (max-width: 48em) {
+  aside {
+    position: fixed;
+    left: -100%;
+    width: 18rem;
+    background-color: var(--color-white);
+    padding-right: var(--card-padding);
+    transition: var(--transition);
+    z-index: 999;
+  }
+  aside.active {
+    left: 0;
+  }
+}
+aside .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.4rem;
+}
+aside .top .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+aside .top .logo h2 {
+  text-transform: uppercase;
+}
+@media screen and (max-width: 75em) {
+  aside .top .logo h2 {
+    display: none;
+  }
+}
+@media screen and (max-width: 75em) {
+  aside .top .logo h2 {
+    display: none;
+  }
+}
+@media screen and (max-width: 48em) {
+  aside .top .logo h2 {
+    display: block;
+  }
+}
+@media screen and (max-width: 48em) {
+  aside .top .logo h2 {
+    display: block;
+  }
+}
+aside .top .logo h2 span {
+  text-transform: uppercase;
+}
+aside .top .logo img {
+  width: 2rem;
+  height: 2rem;
+}
+@media screen and (max-width: 48em) {
+  aside .top .logo img {
+    margin-left: 1rem;
+  }
+}
+@media screen and (max-width: 48em) {
+  aside .top .logo img {
+    margin-left: 1rem;
+  }
+}
+aside .top .close {
+  display: none;
+  cursor: pointer;
+}
+@media screen and (max-width: 48em) {
+  aside .top .close {
+    display: inline-block;
+  }
+}
+@media screen and (max-width: 48em) {
+  aside .top .close {
+    display: inline-block;
+  }
+}
+aside .sidebar {
+  height: 86vh;
+  position: relative;
+  top: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+aside .sidebar a {
+  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-info-dark);
+  height: 3.7rem;
+  position: relative;
+  transition: var(--transition);
+}
+@media screen and (max-width: 75em) {
+  aside .sidebar a {
+    width: 5.7rem;
+  }
+}
+@media screen and (max-width: 75em) {
+  aside .sidebar a {
+    width: 5.7rem;
+  }
+}
+@media screen and (max-width: 48em) {
+  aside .sidebar a {
+    height: 3.4rem;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 48em) {
+  aside .sidebar a {
+    height: 3.4rem;
+    width: 100%;
+  }
+}
+aside .sidebar a .message-count {
+  background: var(--color-danger);
+  color: var(--color-white);
+  font-size: 11px;
+  padding: 2px 10px;
+  border-radius: var(--border-radius-1);
+}
+aside .sidebar a h3 {
+  font-weight: 500;
+}
+@media screen and (max-width: 75em) {
+  aside .sidebar a h3 {
+    display: none;
+  }
+}
+@media screen and (max-width: 75em) {
+  aside .sidebar a h3 {
+    display: none;
+  }
+}
+@media screen and (max-width: 48em) {
+  aside .sidebar a h3 {
+    display: block;
+  }
+}
+@media screen and (max-width: 48em) {
+  aside .sidebar a h3 {
+    display: block;
+  }
+}
+aside .sidebar a span {
+  font-size: 1.6rem;
+  transition: var(--transition);
+}
+aside .sidebar a:last-of-type {
+  position: absolute;
+  bottom: 2rem;
+  width: 100%;
+}
+@media screen and (max-width: 75em) {
+  aside .sidebar a:last-of-type {
+    position: relative;
+    margin-top: 1.3rem;
+    margin-left: 2.3rem;
+  }
+}
+@media screen and (max-width: 75em) {
+  aside .sidebar a:last-of-type {
+    position: relative;
+    margin-top: 1.3rem;
+    margin-left: 2.3rem;
+  }
+}
+@media screen and (max-width: 48em) {
+  aside .sidebar a:last-of-type {
+    bottom: 1rem;
+  }
+}
+@media screen and (max-width: 48em) {
+  aside .sidebar a:last-of-type {
+    bottom: 1rem;
+  }
+}
+aside .sidebar a.active {
+  background: var(--color-light);
+  color: var(--color-primary);
+  margin-left: 0;
+}
+aside .sidebar a.active span {
+  color: var(--color-primary);
+}
+aside .sidebar a.active::before {
+  content: "";
+  width: 6px;
+  height: 100%;
+  background: var(--color-primary);
+}
+aside .sidebar a.active span {
+  margin-left: calc(1rem - 3px);
+}
+aside .sidebar a:hover {
+  color: var(--color-primary);
+}
+aside .sidebar a:hover span {
+  margin-left: 1rem;
+}
+
+main {
+  margin-top: 1.4rem;
+}
+@media screen and (max-width: 48em) {
+  main {
+    margin-top: 8rem;
+    padding: 0 1rem;
+  }
+}
+@media screen and (max-width: 48em) {
+  main {
+    margin-top: 8rem;
+    padding: 0 1rem;
+  }
+}
+main .date {
+  display: inline-block;
+  background: var(--color-light);
+  border-radius: var(--border-radius-1);
+  margin-top: 1rem;
+  padding: 0.5rem 1.6rem;
+}
+main .date input {
+  background: transparent;
+}
+main .sales {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+@media screen and (max-width: 75em) {
+  main .sales {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+@media screen and (max-width: 75em) {
+  main .sales {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+@media screen and (max-width: 48em) {
+  main .sales {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 48em) {
+  main .sales {
+    grid-template-columns: 1fr;
+  }
+}
+main .sales > div {
+  margin-top: 1rem;
+}
+main .sales > div span {
+  font-size: 2rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+main .sales > div .middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .sales > div .middle .left h3 {
+  margin: 1rem 0 0.6rem;
+  font-size: 1rem;
+}
+main .sales > div .middle .left h2 {
+  font-size: 1.8rem;
+}
+main .sales > div .middle .progress {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  position: relative;
+}
+main .sales > div .middle .progress svg circle {
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 14;
+  stroke-linecap: round;
+  transform: translate(5px, 5px);
+  stroke-dasharray: 110;
+  stroke-dashoffset: 92;
+}
+main .sales > div .middle .progress .number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+main .sales > div.expenses span {
+  background-color: var(--color-danger);
+}
+main .sales > div.income span {
+  background-color: var(--color-success);
+}
+main .sales small {
+  margin-top: 1.6rem;
+  text-transform: capitalize;
+}
+main .recent-orders {
+  margin-top: 2rem;
+  text-transform: capitalize;
+}
+@media screen and (max-width: 75em) {
+  main .recent-orders {
+    width: 94%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 2rem 0 0 8.8rem;
+  }
+}
+@media screen and (max-width: 75em) {
+  main .recent-orders {
+    width: 94%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 2rem 0 0 8.8rem;
+  }
+}
+@media screen and (max-width: 48em) {
+  main .recent-orders {
+    position: relative;
+    width: 100%;
+    margin: 3rem 0 0 0;
+  }
+}
+@media screen and (max-width: 48em) {
+  main .recent-orders {
+    position: relative;
+    width: 100%;
+    margin: 3rem 0 0 0;
+  }
+}
+main .recent-orders h2 {
+  margin-bottom: 0.8rem;
+}
+main .recent-orders table {
+  width: 100%;
+  text-align: center;
+}
+@media screen and (max-width: 75em) {
+  main .recent-orders table {
+    width: 83vw;
+  }
+}
+@media screen and (max-width: 75em) {
+  main .recent-orders table {
+    width: 83vw;
+  }
+}
+@media screen and (max-width: 75em) {
+  main .recent-orders table thead tr th:first-child {
+    display: none;
+  }
+}
+@media screen and (max-width: 75em) {
+  main .recent-orders table thead tr th:first-child {
+    display: none;
+  }
+}
+@media screen and (max-width: 75em) {
+  main .recent-orders table thead tr th:last-child {
+    display: none;
+  }
+}
+@media screen and (max-width: 75em) {
+  main .recent-orders table thead tr th:last-child {
+    display: none;
+  }
+}
+@media screen and (max-width: 48em) {
+  main .recent-orders table {
+    width: 100%;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 48em) {
+  main .recent-orders table {
+    width: 100%;
+    margin: 0;
+  }
+}
+main .recent-orders table tbody tr {
+  color: var(--color-dark-variant);
+}
+main .recent-orders table tbody tr td {
+  height: 2.8rem;
+  border-bottom: 1px solid var(--color-light);
+}
+@media screen and (max-width: 75em) {
+  main .recent-orders table tbody tr td:first-child {
+    display: none;
+  }
+}
+@media screen and (max-width: 75em) {
+  main .recent-orders table tbody tr td:first-child {
+    display: none;
+  }
+}
+@media screen and (max-width: 75em) {
+  main .recent-orders table tbody tr td:last-child {
+    display: none;
+  }
+}
+@media screen and (max-width: 75em) {
+  main .recent-orders table tbody tr td:last-child {
+    display: none;
+  }
+}
+main .recent-orders table tbody tr:last-of-type td {
+  border-bottom: none;
+}
+main .recent-orders a {
+  display: block;
+  margin: 1rem auto;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.right {
+  margin-top: 1.4rem;
+}
+@media screen and (max-width: 48em) {
+  .right {
+    width: 94%;
+    margin: 0 auto 4rem;
+  }
+}
+@media screen and (max-width: 48em) {
+  .right {
+    width: 94%;
+    margin: 0 auto 4rem;
+  }
+}
+.right .top {
+  display: flex;
+  justify-content: end;
+  align-items: stretch;
+  gap: 2rem;
+}
+@media screen and (max-width: 48em) {
+  .right .top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 0 0.8rem;
+    width: 100%;
+    height: 4.6rem;
+    background: var(--color-white);
+    align-items: center;
+    box-shadow: 0 1rem 1rem var(--color-light);
+    z-index: 2;
+  }
+}
+@media screen and (max-width: 48em) {
+  .right .top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 0 0.8rem;
+    width: 100%;
+    height: 4.6rem;
+    background: var(--color-white);
+    align-items: center;
+    box-shadow: 0 1rem 1rem var(--color-light);
+    z-index: 2;
+  }
+}
+.right .top #menu-btn {
+  display: none;
+  cursor: pointer;
+}
+@media screen and (max-width: 48em) {
+  .right .top #menu-btn {
+    display: inline-block;
+    background: none;
+    position: absolute;
+    left: 1rem;
+    color: var(--color-dark);
+  }
+}
+@media screen and (max-width: 48em) {
+  .right .top #menu-btn {
+    display: inline-block;
+    background: none;
+    position: absolute;
+    left: 1rem;
+    color: var(--color-dark);
+  }
+}
+@media screen and (max-width: 48em) {
+  .right .top #menu-btn span {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 48em) {
+  .right .top #menu-btn span {
+    font-size: 2rem;
+  }
+}
+.right .top .theme-toggler {
+  background-color: var(--color-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 1.7rem;
+  width: 4.2rem;
+  border-radius: var(--border-radius-1);
+  cursor: pointer;
+}
+@media screen and (max-width: 48em) {
+  .right .top .theme-toggler {
+    position: absolute;
+    left: 69%;
+    width: 4.4rem;
+  }
+}
+@media screen and (max-width: 48em) {
+  .right .top .theme-toggler {
+    position: absolute;
+    left: 69%;
+    width: 4.4rem;
+  }
+}
+.right .top .theme-toggler span {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+.right .top .theme-toggler span.active {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--border-radius-1);
+}
+.right .top .profile {
+  display: flex;
+  gap: 2rem;
+  text-align: right;
+}
+@media screen and (max-width: 48em) {
+  .right .top .profile .info {
+    display: none;
+  }
+}
+@media screen and (max-width: 48em) {
+  .right .top .profile .info {
+    display: none;
+  }
+}
+.right .recent-updates {
+  margin-top: 1rem;
+  text-transform: capitalize;
+}
+.right .recent-updates h2 {
+  margin-bottom: 1rem;
+}
+.right .recent-updates .updates .update {
+  display: grid;
+  grid-template-columns: 2rem auto;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+}
+.right .recent-updates .updates .update p {
+  font-size: clamp(0.7rem, 0.2vw + 5px, 1.2rem);
+  text-transform: none;
+}
+.right .recent-updates .updates .update p b {
+  text-transform: capitalize;
+}
+.right .sales-analytics {
+  margin-top: 2rem;
+}
+.right .sales-analytics h2 {
+  margin-bottom: 0.8rem;
+}
+.right .sales-analytics .item {
+  background-color: var(--color-white);
+  padding: 1.4rem var(--card-padding);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.7rem;
+  border-radius: var(--border-radius-3);
+}
+.right .sales-analytics .item .right {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0;
+  width: 100%;
+}
+.right .sales-analytics .item .icon {
+  color: var(--color-white);
+  padding: 0.6rem;
+  background: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+}
+.right .sales-analytics .item:nth-of-type(2) .icon {
+  background: var(--color-success);
+}
+.right .sales-analytics .item:nth-of-type(3) .icon {
+  background: var(--color-danger);
+}/*# sourceMappingURL=style.css.map */

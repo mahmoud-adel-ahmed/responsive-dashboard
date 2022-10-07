@@ -1,0 +1,12 @@
+$breakPoints: (
+  md: 48em,
+  lg: 75em,
+);
+
+@mixin mediaQuery($size) {
+  @each $val in $breakPoints {
+    @media screen and (max-width: map-get($breakPoints,$size)) {
+      @content;
+    }
+  }
+}
