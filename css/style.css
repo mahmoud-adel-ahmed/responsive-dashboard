@@ -424,6 +424,7 @@ main .date {
 }
 main .date input {
   background: transparent;
+  color: var(--color-dark);
 }
 main .sales {
   display: grid;
